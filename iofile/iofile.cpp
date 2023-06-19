@@ -26,11 +26,21 @@ int main() {
 		outfile.close();
 	}
 
-	ifstream infile;
+	ifstream infile;//ifstream untuk mode membuka dan emmbaca file
 
 	infile.open("contohfile.txt");
 	//outfile.open("D:/contohfile/contohfile.txt")
-	//outfile.open(namafile+"txt",ios::in)
+	//outfile.open(namafile+"txt",ios::out)
+
+	cout << "membuka dan membaca file" << endl;
+	
+	if (infile.is_open())//jika file ada maka
+	{
+		//melakukan perulangan setiap baris
+		while (getline(infile, baris)) {
+
+		}
+	}
 
 
 
