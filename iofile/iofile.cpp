@@ -11,7 +11,7 @@ int main() {
 	//menunjuk ke sebuah nama file
 	outfile.open("contohfile.txt");
 	//outfile.open("D:/contohfile/contohfile.txt")
-	//outfile.open(namafile+"txt",ios::in)
+	//outfile.open(namafile+".txt",ios::in)
 
 	cout << ">= Menulis file, \'q\' untuk keluar" << endl;
 
@@ -31,7 +31,7 @@ int main() {
 
 	infile.open("contohfile.txt");
 	//outfile.open("D:/contohfile/contohfile.txt")
-	//outfile.open(namafile+"txt",ios::out)
+	//outfile.open(namafile+".txt",ios::out)
 
 	cout << "membuka dan membaca file" << endl;
 	
