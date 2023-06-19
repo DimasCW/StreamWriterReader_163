@@ -23,8 +23,9 @@ int main() {
 		//loop akan berhenti jika anda memasukkan karakter q
 		if (baris == "q")break;
 		//menulis dan memasukkan nilai dari 'baris' ke dalam file
-		outfile.close();
+		outfile << baris << endl;
 	}
+	outfile.close();
 
 	ifstream infile;//ifstream untuk mode membuka dan emmbaca file
 
@@ -38,7 +39,7 @@ int main() {
 	{
 		//melakukan perulangan setiap baris
 		while (getline(infile, baris)) {
-			cout << baris << endl;
+			cout << baris << '\n';
 		}
 		infile.close();
 	}
