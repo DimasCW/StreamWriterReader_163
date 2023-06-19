@@ -8,6 +8,12 @@ using namespace std;
 int main() {
 	cout << "awal program dijalankan" << endl;
 	try {
+		array<int, 3>data = { 1, 2, 3 };
+		//pesan array integer 3 elemen
+		cout << data.at(4) << endl;
+		//mengambil array eleemen ke 5
+	}
+	catch (exeption& e) {
 
 	}
 }
