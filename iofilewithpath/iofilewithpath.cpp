@@ -1,20 +1,53 @@
-// iofilewithpath.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include<fstream>
+#include<iostream>
+#include<string>
+using namespace std;
 
-#include <iostream>
+int main() {
+	string baris;
+	string NamaFile;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+	cout << "masukkan nama file :";
+	cin >> NamaFile;
+
+	//membuka file dalam mode menulis.
+	ofstream outfile;
+	//menunjuk ke sebuah nama file
+	//outfile.open("contohfile.txt");
+	//outfile.open("D:/contohfile/contohfile.txt")
+	outfile.open(NamaFile + ".txt", ios::out);
+
+	cout << ">= Menulis file, \'q\' untuk keluar" << endl;
+
+	//unlimited loop untuk menulis
+	while (true) {
+		cout << "- ";
+		//mendapatkan setiap karakter dalam satu baris
+		getline(cin, baris);
+		//loop akan berhenti jika anda memasukkan karakter q
+		if (baris == "q")break;
+		//menulis dan memasukkan nilai dari 'baris' ke dalam file
+		outfile << baris << endl;
+	}
+	outfile.close();
+
+	ifstream infile;//ifstream untuk mode membuka dan emmbaca file
+
+	//infile.open("contohfile.txt");
+	//outfile.open("D:/contohfile/contohfile.txt")
+	infile.open(NamaFile + ".txt", ios::in);
+
+	cout << "membuka dan membaca file" << endl;
+
+	if (infile.is_open())//jika file ada maka
+	{
+		//melakukan perulangan setiap baris
+		while (getline(infile, baris)) {
+			cout << baris << '\n';
+		}
+		infile.close();
+	}
+	//jika tidak ditemukan file maka akan menampilkan ini
+	else cout << "unable to open file";
+	return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
