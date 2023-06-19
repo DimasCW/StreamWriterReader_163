@@ -17,6 +17,8 @@ int main() {
 		//penangkap emnggunakan objek exception
 		cout << e.what() << endl;
 		//akan dieksekusi karna array data hanya memiliki 3 elemen
-
 	}
+	cout << "baris program yang terakhir" << endl;
+		//penanda 2: bahwa program jalan walaaupun terdapat kesalahan
+		return 0;
 }
