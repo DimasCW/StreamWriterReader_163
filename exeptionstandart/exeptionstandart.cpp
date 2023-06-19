@@ -13,7 +13,10 @@ int main() {
 		cout << data.at(4) << endl;
 		//mengambil array eleemen ke 5
 	}
-	catch (exeption& e) {
+	catch (exception& e) {
+		//penangkap emnggunakan objek exception
+		cout << e.what() << endl;
+		//akan dieksekusi karna array data hanya memiliki 3 elemen
 
 	}
 }
